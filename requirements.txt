@@ -1,0 +1,36 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Smart Glasses for the Blind – Python Dependencies
+# ─────────────────────────────────────────────────────────────────────────────
+# Install:  pip install -r requirements.txt
+#
+# Raspberry Pi 4 notes:
+#   • Use tflite-runtime instead of the full tensorflow package:
+#       pip install tflite-runtime
+#   • OpenCV on RPi:  sudo apt install python3-opencv
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Computer vision ───────────────────────────────────────────────────────────
+opencv-python>=4.5.0
+
+# ── Machine learning inference ────────────────────────────────────────────────
+# On Raspberry Pi 4 install tflite-runtime (much lighter than full tensorflow):
+#   pip install tflite-runtime
+# On a laptop / CI environment you can use full tensorflow:
+tensorflow>=2.10.0; platform_machine != 'armv7l' and platform_machine != 'aarch64'
+# tflite-runtime>=2.10.0  # Uncomment for RPi 4 / ARM
+
+# ── Numerical computing ───────────────────────────────────────────────────────
+numpy>=1.21.0
+
+# ── System monitoring ─────────────────────────────────────────────────────────
+psutil>=5.9.0
+
+# ── Text-to-Speech (TTS) ──────────────────────────────────────────────────────
+pyttsx3>=2.90
+
+# ── Speech recognition (offline, Vosk backend) ───────────────────────────────
+vosk>=0.3.32
+pyaudio>=0.2.11
+
+# ── Audio ─────────────────────────────────────────────────────────────────────
+SpeechRecognition>=3.9.0
